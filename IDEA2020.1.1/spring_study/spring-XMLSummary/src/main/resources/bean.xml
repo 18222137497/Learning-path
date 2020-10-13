@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    UserDaoImpl依赖注入-->
+    <bean id="userDaoImpl" class="com.wang.dao.imp.UserDaoImpl" ><!-- autowire="byName" 自动装配属性-->
+        <!-- String类型       -->
+        <property name="name" value="汪京"></property>
+        <!-- Integer类型       -->
+        <property name="age" value="18"></property>
+        <!-- Map类型       -->
+        <property name="map">
+            <map>
+                <!--一定要记住，entry是map的对象  第一种写法-->
+                <entry key="一" value="1"></entry>
+                <!--第二种写法-->
+                <entry key="二">
+                    <value>2</value>
+                </entry>
+            </map>
+        </property>
+        <!-- 字符串数组类型       -->
+        <property name="names">
+            <array>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--    UserDaoImpl1依赖注入-->
+    <bean id="userDaoImpl1" class="com.wang.dao.imp.UserDaoImpl1">
+        <!--特殊类型注入-->
+        <property name="date" ref="now"></property>
+        <!--list集合类型-->
+        <property name="list">
+            <list>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </list>
+        </property>
+        <!--set集合类型-->
+        <property name="set">
+            <set>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </set>
+        </property>
+        <!--properties类型-->
+        <property name="properties">
+            <props>
+                <prop key="一">一</prop>
+                <prop key="二">二</prop>
+                <prop key="三">三</prop>
+            </props>
+        </property>
+    </bean>
+
+<!--    相当于new了一个Date对象，变量名叫now-->
+    <bean id="now" class="java.util.Date"></bean>
+
+<!--    class:指定类的地址,scope:单例还是多例,init-method:对象创建时执行对象中的那个方法,destroy-method:对象销毁时执行对象-->
+    <bean id="userService" class="com.wang.service.imp.UserServiceImpl" scope="singleton" init-method="init" destroy-method="close" >
+        <!--  依赖注入 name是变量名(必须有get·set方法) ref是bean.xml里面创建的变量      -->
+<!--        <property name="userDao" ref="userDaoImpl"></property>-->
+        <property name="userDao" ref="userDao_0"></property>
+    </bean>
+
+    <bean id="userService1" class="com.wang.service.imp.UserServiceImpl1" init-method="init" destroy-method="close" scope="prototype">
+<!--        <property name="userDao" ref="userDaoImpl1"></property>-->
+        <property name="userDao" ref="userDao_1"></property>
+    </bean>
+    <!--非静态jar调用创建UserDaoImpl对象-->
+    <bean id="instanceFactory" class="com.wang.factory.InstanceFactory"></bean>
+    <bean id="userDao_0" factory-bean="instanceFactory" factory-method="getAccountService"></bean>
+    <!--静态jar调用创建UserDaoImpl1对象-->
+    <bean id="userDao_1" class="com.wang.factory.staticFactory" factory-method="getAccountService"></bean>
+</beans>

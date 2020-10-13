@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        // window.onload=function () {
+        //     alert("这个只能执行一次，再写一个window.onload就会替换这个内容")
+        // }
+        $(function () {
+            alert("这个就可以执行无限次，在创建一个也不会替换，这个和window.onload等价")
+            $("#div1").css("background-color","red");//添加css样式的第一种写法，参数前面是键，后面是值(单词不能拼错)
+            $("#div1").css("backgroundColor","red");//添加css样式的第二种写法，不同的就是把横杠去掉然后大写，按ctrl鼠标移到上面可以检查单词拼写
+            $("#b1").click(function () {
+                    alert("你点击了按钮");
+                }
+            );
+        })
+
+    </script>
+</head>
+<body>
+    <div id="div1">div1....</div>
+    <input type="button" value="点我" id="b1">
+</body>
+</html>

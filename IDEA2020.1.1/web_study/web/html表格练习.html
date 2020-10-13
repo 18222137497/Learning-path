@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>合并行和列</title>
+</head>
+<body>
+    <table border="1" bgcolor="#7fffd4" align="center" cellpadding="0" cellspacing="0" width="50%">
+        <caption>学生成绩表</caption>
+        <thead>
+            <tr>
+                <th>
+                    编号
+                </th>
+                <th>
+                    姓名
+                </th>
+                <th>
+                    性别
+                </th>
+                <th>
+                    成绩
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    小龙女
+                </td>
+                <td>
+                    女
+                </td>
+                <td>
+                    100
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    杨过
+                </td>
+                <td>
+                    男
+                </td>
+                <td rowspan="2"><!--合并行 -->
+                    90
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    3
+                </td>
+                <td>
+                    金轮法王
+                </td>
+                <td>
+                    男
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    总成绩
+                </td>
+                <td colspan="3"><!-- 合并列 -->
+                    190
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正在跳转</title>
+
+    <style>
+        span{
+            color: #ff0000;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p><span id="sss">5</span>秒后转到，请稍后。。。。。</p>
+    <input type="button" id="backup" value="后退">
+</body>
+</html>
+<script>
+    var sss=document.getElementById('sss');
+    var time=sss.innerText;//获取对象的值
+    var js=setInterval(showtime,1000);//一秒执行一次方法
+    function showtime(){//给对象赋值显示
+        time--;
+        if (time<=0){
+            location.href='https://www.baidu.com';//这里改用跳转，可以不用关闭定时器，他在切换网页时候关闭
+            clearInterval(a);//这个关闭很重要，不然会一直执行上面的打开网页语句,除非关闭当前网页
+        }
+        sss.innerHTML=time+'';//给对象赋值
+    }
+    var backup=document.getElementById('backup');
+    backup.onclick=function () {
+        //history.go(1);和下面代码等效
+        history.back();
+    }
+
+</script>

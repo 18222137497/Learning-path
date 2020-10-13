@@ -1,0 +1,33 @@
+{
+  "groups": [
+    {
+      "name": "person",
+      "type": "com.wang.springbootstart.pojo.Person",
+      "sourceType": "com.wang.springbootstart.pojo.Person"
+    }
+  ],
+  "properties": [
+    {
+      "name": "person.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.wang.springbootstart.pojo.Person",
+      "defaultValue": 0
+    },
+    {
+      "name": "person.birthday",
+      "type": "java.util.Date",
+      "sourceType": "com.wang.springbootstart.pojo.Person"
+    },
+    {
+      "name": "person.name",
+      "type": "java.lang.String",
+      "sourceType": "com.wang.springbootstart.pojo.Person"
+    },
+    {
+      "name": "person.school",
+      "type": "com.wang.springbootstart.pojo.School",
+      "sourceType": "com.wang.springbootstart.pojo.Person"
+    }
+  ],
+  "hints": []
+}

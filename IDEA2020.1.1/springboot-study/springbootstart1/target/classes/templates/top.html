@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <!-- 1. 导入CSS的全局样式 -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
+    <script th:src="@{/js/jquery-3.3.1.js}"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <h1>主页</h1>
+    <h1>[[${session.loginUser}]]</h1>
+    <a href="empList">查询所有员工</a><br>
+</body>
+</html>

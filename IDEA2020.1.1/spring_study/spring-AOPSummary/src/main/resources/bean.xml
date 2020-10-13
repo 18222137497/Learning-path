@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="jdbcConfig.properties"></context:property-placeholder>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${java.driver}"></property>
+        <property name="jdbcUrl" value="${java.url}"></property>
+        <property name="user" value="${java.username}"></property>
+        <property name="password" value="${java.password}"></property>
+    </bean>
+    <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype"></bean>
+    <bean id="connectionUtils" class="com.wang.utils.ConnectionUtils">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <bean id="aopManager" class="com.wang.utils.AopManager">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+    </bean>
+    <bean id="accountDao" class="com.wang.dao.Impl.AccountDaoImpl">
+        <property name="connectionUtils" ref="connectionUtils"></property>
+        <property name="runner" ref="runner"></property>
+    </bean>
+    <bean id="accountService" class="com.wang.service.Impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>
+    <bean id="accountServiceProsy" class="com.wang.Factory.ProxyService">
+        <property name="accountService" ref="accountService"></property>
+    </bean>
+    <bean id="asp" factory-bean="accountServiceProsy" factory-method="getAccountService"></bean>
+    <aop:config>
+        <aop:pointcut id="pt1" expression="execution(* com.wang.service.Impl.*.*(..))"/>
+        <aop:aspect id="accountServiceImplAop" ref="aopManager">
+            <aop:before method="beforeOpen" pointcut-ref="pt1"></aop:before>
+            <aop:after-returning method="afterReturningCommit" pointcut-ref="pt1"></aop:after-returning>
+            <aop:after-throwing method="afterThrowingRollback" pointcut-ref="pt1"></aop:after-throwing>
+            <aop:after method="afterClose" pointcut-ref="pt1"></aop:after>
+        </aop:aspect>
+    </aop:config>
+
+</beans>

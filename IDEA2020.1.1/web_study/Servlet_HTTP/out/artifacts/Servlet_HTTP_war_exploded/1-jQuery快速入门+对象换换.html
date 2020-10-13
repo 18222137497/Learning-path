@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速入门+对象换换</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="div1">div1...</div>
+    <div id="div2">div2...</div>
+</body>
+<script>
+    var elementsByTagName = document.getElementsByTagName("div");
+    for (var i=0;i<elementsByTagName.length;i++){
+        elementsByTagName[i].innerHTML="js"
+    }
+    var $div = $("div");
+    $div.html("jq");
+
+    $div[0].innerHTML="jq转js";
+    $div.get(1).innerHTML="jq转js"
+    $(elementsByTagName).html("js转jq");
+    /*
+        js和jq的方法不共同，所以当js想使用jq的方法时，或者相反，就要进行对应转换
+        js-->jq  : $(js对象)
+        jq-->js  : jq对象[索引] 或者 jq对象.get(索引)
+     */
+
+</script>
+</html>

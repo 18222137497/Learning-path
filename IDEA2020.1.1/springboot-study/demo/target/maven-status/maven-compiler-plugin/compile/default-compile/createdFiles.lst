@@ -1,0 +1,4 @@
+com\wang\Controller\test.class
+com\wang\domain\Student.class
+com\wang\DemoApplication.class
+com\wang\Mapper\StudentMapper.class

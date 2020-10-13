@@ -1,0 +1,6 @@
+com\wang\springbootstart\SpringbootstartApplication.class
+com\wang\springbootstart\Controller\TestController.class
+com\wang\springbootstart\pojo\Person.class
+com\wang\springbootstart\pojo\School.class
+com\wang\springbootstart\源码分析_HttpEncodingAutoConfiguration.class
+META-INF\spring-configuration-metadata.json

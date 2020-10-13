@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springbootstart7" />
+        <module name="springbootstart6" />
+        <module name="springbootstart5" />
+        <module name="springbootstart4" />
+        <module name="springbootstart3" />
+        <module name="springbootstart2" />
+        <module name="springbootstart1" />
+        <module name="dubbo_zookeeper-server" />
+        <module name="springbootstart8" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dubbo_zookeeper-server" target="1.8" />
+      <module name="springbootstart1" target="1.8" />
+      <module name="springbootstart2" target="1.8" />
+      <module name="springbootstart3" target="1.8" />
+      <module name="springbootstart4" target="1.8" />
+      <module name="springbootstart5" target="1.8" />
+      <module name="springbootstart6" target="1.8" />
+      <module name="springbootstart7" target="1.8" />
+      <module name="springbootstart8" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dubbo_zookeeper-server" options="-parameters" />
+      <module name="springbootstart1" options="-parameters" />
+      <module name="springbootstart2" options="-parameters" />
+      <module name="springbootstart3" options="-parameters" />
+      <module name="springbootstart4" options="-parameters" />
+      <module name="springbootstart5" options="-parameters" />
+      <module name="springbootstart6" options="-parameters" />
+      <module name="springbootstart7" options="-parameters" />
+      <module name="springbootstart8" options="-parameters" />
+    </option>
+  </component>
+</project>

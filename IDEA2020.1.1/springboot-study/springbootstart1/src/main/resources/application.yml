@@ -1,0 +1,18 @@
+# 查看springboot所有自动配置生效与否
+# debug: true
+
+#配置这个指定静态资源存放位置的话，默认的存放位置就会失效，一般不建议这样做
+#spring:
+#  mvc:
+#    static-path-pattern: classpath:/wang
+
+#自定义时间格式 ???版本太新，有些不一样的地方
+#spring:
+#  mvc:
+#    format:
+#      date: yyyy-MM-dd
+
+# 配置 国际化配置文件的真实位置
+spring:
+  messages:
+    basename: i18n.login

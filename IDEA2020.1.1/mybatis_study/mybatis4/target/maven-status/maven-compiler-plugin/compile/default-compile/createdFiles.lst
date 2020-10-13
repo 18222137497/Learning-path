@@ -1,0 +1,4 @@
+org\example\domain\User.class
+org\example\dao\UserDao.class
+org\example\domain\QueryVo.class
+org\example\Util\mybatisUtil.class

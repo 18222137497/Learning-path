@@ -1,0 +1,3 @@
+com\wang\dao\UserDao.class
+com\wang\util\mybatisUtil.class
+com\wang\domain\User.class

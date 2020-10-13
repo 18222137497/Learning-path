@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "user",
+      "type": "com.wang.Controller.test1",
+      "sourceType": "com.wang.Controller.test1"
+    }
+  ],
+  "properties": [
+    {
+      "name": "user.name",
+      "type": "java.lang.String",
+      "sourceType": "com.wang.Controller.test1"
+    }
+  ],
+  "hints": []
+}

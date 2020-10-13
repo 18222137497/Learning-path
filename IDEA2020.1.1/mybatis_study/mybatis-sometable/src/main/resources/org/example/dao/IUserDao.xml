@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.IUserDao">
+<!--    &lt;!&ndash;配置查询结果的列名和实体类的属性名的对应关系&ndash;&gt;-->
+<!--    <resultMap id="userMap" type="org.example.domain.IUser">-->
+<!--        &lt;!&ndash;主键字段的对应&ndash;&gt;-->
+<!--        <id property="IUser里面的id名字" column="mysql里面的id名字"></id>-->
+<!--        &lt;!&ndash;非主键字段的对应&ndash;&gt;-->
+<!--        <result property="IUser里面的名字" column="mysql里面的名字"></result>-->
+<!--    </resultMap>-->
+    <resultMap id="iusermap" type="org.example.domain.IUser">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="sex" column="sex"></result>
+        <result property="address" column="address"></result>
+<!--    配置user对象中accounts集合的映射    -->
+        <collection property="accounts" ofType="org.example.domain.account">
+            <id column="aid" property="id"></id>
+            <result property="uid" column="uid"></result>
+            <result property="money" column="money"></result>
+        </collection>
+    </resultMap>
+    <select id="findAll" resultMap="iusermap">
+        select * from iuser u left outer join account a on u.id=a.uid
+    </select>
+    <select id="findById" resultType="org.example.domain.IUser" parameterType="java.lang.Integer">
+        select  * from iuser
+        <where>
+            id=#{id}
+        </where>
+    </select>
+</mapper>

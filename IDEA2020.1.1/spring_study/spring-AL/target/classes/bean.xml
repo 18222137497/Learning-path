@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSourceFactory" factory-method="createDataSource">
+        <constructor-arg>
+            <map>
+                <entry key="driver" value="com.mysql.jdbc.Driver"/>
+                <entry key="url" value="jdbc:mysql://localhost:3306/spring"></entry>
+                <entry key="username" value="root"></entry>
+                <entry key="password" value="root"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+<!--    jdbcTemplate对象-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" scope="prototype">
+<!--    dataSource属性-->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+<!--    accountDao对象-->
+    <bean id="accountDao" class="com.wang.dao.impl.AccountDaoImpl" scope="prototype">
+<!--    jdbcTemplate属性-->
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+<!--    accountService对象 -->
+    <bean id="accountService" class="com.wang.service.Impl.AccountServiceImpl" scope="prototype">
+<!--    accountDao属性    -->
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>
+</beans>

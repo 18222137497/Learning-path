@@ -1,0 +1,4 @@
+org\apache\domain\ZZ.class
+org\apache\dao\UserDao.class
+org\apache\utils\mybatisUtil.class
+org\apache\domain\User.class

@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:15:59:21 +0800] "GET /springmvc-response HTTP/1.1" 302 - http-bio-80-exec-1 0
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:15:59:22 +0800] "GET /springmvc-response/ HTTP/1.1" 200 790 http-bio-80-exec-2 648
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:15:59:24 +0800] "POST /springmvc-response/servlet/testAjax HTTP/1.1" 415 1048 http-bio-80-exec-3 37
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:00:59 +0800] "GET /springmvc-response HTTP/1.1" 302 - http-bio-80-exec-1 0
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:00:59 +0800] "GET /springmvc-response/ HTTP/1.1" 200 790 http-bio-80-exec-2 51
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:01:02 +0800] "POST /springmvc-response/servlet/testAjax HTTP/1.1" 400 968 http-bio-80-exec-3 93
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:01:28 +0800] "GET /springmvc-response HTTP/1.1" 302 - http-bio-80-exec-1 0
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:01:28 +0800] "GET /springmvc-response/ HTTP/1.1" 200 789 http-bio-80-exec-2 572
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:01:30 +0800] "POST /springmvc-response/servlet/testAjax HTTP/1.1" 200 53 http-bio-80-exec-3 118
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:06:32 +0800] "GET /springmvc-response HTTP/1.1" 302 - http-bio-80-exec-1 0
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:06:32 +0800] "GET /springmvc-response/ HTTP/1.1" 200 789 http-bio-80-exec-2 41
+0:0:0:0:0:0:0:1 - - [07/Aug/2020:16:06:33 +0800] "POST /springmvc-response/servlet/testAjax HTTP/1.1" 200 53 http-bio-80-exec-3 152

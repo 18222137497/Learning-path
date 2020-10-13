@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!--配置servlet   1-->
+    <servlet>
+        <servlet-name>demo1</servlet-name><!--定义名字-->
+        <servlet-class>cn.itcast.web.servlet.ServletDemo1</servlet-class><!--class文件路径-->
+        <!--        指定servlet的创建时机
+                1.第一次被访问时候创建
+                    <load-on-startup>值为负数(默认为-1)
+                2.服务器启动时候创建
+                    <load-on-startup>值为正数或者0
+-->
+        <load-on-startup>-1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demo1</servlet-name><!--导入的名字和就是上面那个名字-->
+        <url-pattern>/demo1</url-pattern><!--在地址栏输出的方式-->
+    </servlet-mapping>
+
+</web-app>

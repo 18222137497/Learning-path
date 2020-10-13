@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>事件学习</title>
+    <style>
+        #td1{
+            color: red;
+        }
+        table{
+            border: 1px solid ;
+            background-color: aqua;
+            border-spacing: 0;
+            border-padding: 0;
+            float: left;/*让表但之间不会换行输出*/
+        }
+        #d6,#d7,#d8,#d9{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<table id="table1">
+    <tr>
+        <td colspan="2" align="center" id="td1">
+            0
+        </td>
+    </tr>
+    <tr>
+        <td><input type="button" id="in1" value="单击+1"></td>
+        <td><input type="button" id="in2" value="双击-1"></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <input type="text" id="in3" placeholder="给我焦点！">
+        </td>
+    </tr>
+    <tr>
+        <td id="=td2">
+            <d id="d1">给上面的框焦点</d>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <d id="d2">鼠标静止</d><br>
+            <d id="d3">左键点击</d><br>
+            <d id="d4">右键点击</d><br>
+            <d id="d5">滚轮点击</d>
+        </td>
+        <td><img src="img1/off.gif" id="img1"></td>
+
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            被按下的键的unicode字符码:<d id="d6"></d>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            被松开的键的unicode字符码:<d id="d7"></d>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            按下松开键的unicode字符码:<d id="d8"></d>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            已选择城市:<d id="d9"></d>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select id="s1">
+                <option name="city" value="">--请选择--</option>
+                <option name="city" value="北京">北京</option>
+                <option name="city" value="天津">天津</option>
+                <option name="city" value="上海">上海</option>
+            </select>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+</body>
+</html>
+<script src="JavaScript/js事件.js"></script>

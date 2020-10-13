@@ -1,0 +1,66 @@
+#查看springboot所有自动配置生效与否
+debug: true
+#多文档配置
+# springboot的多环境配置：可以选择激活那一个配置文件,参数只需要填application-后面的名字就可以
+spring:
+  profiles:
+    active: dev
+# 设置端口号
+server:
+  port: 8081
+#单个键值对，冒号后面必须接空格！！！！！！！
+me: 我自己
+#缩进方式表示对象
+#行列方式表示对象
+user: {name: nihao,age: 18}
+#配置数组(List,Set)数据
+city:
+  - 天津
+  - 北京
+  - 上海
+#或者
+city1: [天津,北京,上海]
+#集合中的元素是对象形式
+student:
+  - name: 我自己
+    age: 18
+    sex: 男
+  - name: niaho
+    age: 17
+    sex: 女
+#map集合
+map:
+  key1: value1
+  key2: value2
+
+
+
+#      对象
+person:
+    name: 张三${random.uuid}
+    age: ${random.int}
+    birthday: 1998/10/17
+    school:
+      name: 延安大学
+#      下面这个语句是说如果对象存在则使用对象的值，不存在使用后面的值
+      LV: ${person.LV:一本}
+#      数组
+list:
+  - 1
+  - 2
+  - 3
+---
+# yaml多文档配置
+# 设置这个文档的名字
+spring:
+  profiles: dev
+server:
+  port: 8082
+---
+# yaml多文档配置
+# 设置这个文档的名字
+spring:
+  profiles: action
+server:
+  port: 8083
+

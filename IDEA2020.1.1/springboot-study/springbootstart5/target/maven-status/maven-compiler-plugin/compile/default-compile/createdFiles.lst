@@ -1,0 +1,4 @@
+com\wang\Springbootstart5Application.class
+com\wang\Config\SwaggerConfig.class
+com\wang\pojo\MyUser.class
+com\wang\Controller\MyController.class

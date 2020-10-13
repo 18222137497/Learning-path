@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单项input标签</title>
+</head>
+<body>
+	<form action="#" method='get'>
+		<!-- label类似于点击内容移动焦点到for='id',但是要先设定id-->
+		<label for='username'>id:</label><input type="text" value='有字' id='username'><br><!-- 提前写好的内容 -->
+		用户名:<input type="text" placeholder='请输入用户名'><br><!-- 提示字体 -->
+		密码:<input type='password' placeholder='请输入密码'><br><!-- 密码框 -->
+		性别:<input type="radio" name='gender' value='男' checked>男<!-- radio单选框 checked默认选 -->
+		<input type="radio" name='gender' value='女'>女<br>
+		等级:<input type="checkbox" name='hobby' value='A'>A<!-- 复选框 -->
+		<input type="checkbox" name='hobby' value='B' checked>B
+		<input type="checkbox" name='hobby' value='C'>C<br>
+		<input type='file' name='file'><!-- 选择文件 -->
+		<input type="hidden" name='id' value='aaa'><br><!-- 隐藏域 用于提交一些信息 -->
+		<input type="button" value='普通按钮'><br><!-- 普通按钮 -->
+		<input type='image' src='regbtn.jpg'><br><!-- 指定图片按钮，可以提交表单 -->
+		
+		取色器:<input type='color' name='color'><br>
+		生日:<input type='date' name='date'><br><!-- 只显示年月日 -->
+		你生日:<input type="datetime-local" name='date1'><br><!-- 显示年月日时分 -->
+		邮箱:<input type='email' name='email'><br><!--会有正则提示 -->
+		年龄:<input type='number' name='age'><br><!-- 限定输入数字 -->
+		<input type="submit" value='登录'><br><!-- 提交表单 -->
+		
+	</form>
+</body>
+</html>

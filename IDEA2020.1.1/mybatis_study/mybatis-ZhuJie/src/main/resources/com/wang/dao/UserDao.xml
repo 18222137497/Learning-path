@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.dao.UserDao">
+    <cache/>
+    <resultMap id="userMap" type="com.wang.domain.User">
+        <id property="userId" column="id"></id>
+        <result property="userName" column="username"></result>
+        <result property="userAddress" column="address"></result>
+        <result property="userSex" column="sex"></result>
+        <result property="userBirthday" column="birthday"></result>
+    </resultMap>
+    <select id="findAll" resultMap="userMap" useCache="true">
+        select * from user
+    </select>
+</mapper>

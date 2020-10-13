@@ -1,0 +1,15 @@
+org\example\mybatis\utils\XMLConfigBuilder.class
+org\example\mybatis\defaults\DefaultSqlSessionFactory.class
+org\example\mybatis\utils\Executor.class
+org\example\Dao\UserDao.class
+org\example\mybatis\cfg\Mapper.class
+org\example\Domain\User.class
+org\example\mybatis\annotations\Select.class
+org\example\mybatis\proxy\MapperProxy.class
+org\example\mybatis\utils\DataSourceUtil.class
+org\example\mybatis\cfg\Configuration.class
+org\example\mybatis\io\Resources.class
+org\example\mybatis\session\SqlSessionFactory.class
+org\example\mybatis\session\SqlSession.class
+org\example\mybatis\defaults\DefaultSqlSession.class
+org\example\mybatis\session\SqlSessionFactoryBuilder.class

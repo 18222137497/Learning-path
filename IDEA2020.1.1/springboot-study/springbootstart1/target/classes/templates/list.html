@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>员工列表</title>
+    <!-- 1. 导入CSS的全局样式 -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <!-- 2. jQuery导入，建议使用1.9以上的版本 -->
+    <script th:src="@{/js/jquery-3.3.1.js}"></script>
+    <!-- 3. 导入bootstrap的js文件 -->
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <table class="table" >
+                <thead>
+                <tr>
+                    <th>
+                        姓名
+                    </th>
+                    <th>
+                        邮箱
+                    </th>
+                    <th>
+                        性别
+                    </th>
+                    <th>
+                        部门
+                    </th>
+                    <th>
+                        生日
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="emp:${emps}">
+                    <td th:text="${emp.getLastName()}"></td>
+                    <td th:text="${emp.getEmail()}"></td>
+<!--                    三目运算符-->
+                    <td th:text="${emp.getGender()==0?'女':'男'}"></td>
+                    <td th:text="${emp.getDepartment().getDepartmentName()}"></td>
+<!--                    格式化日期-->
+                    <td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd')}"></td>
+                    <td ><a th:href="@{updateEmp/}+${emp.getId()}">删除</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Server_applet:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Server_applet_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Server_applet" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="druid-1.0.9" />
+          <element id="library" level="project" name="c3p0-0.9.5.2" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Server_applet/web/Web" />
+    </root>
+  </artifact>
+</component>

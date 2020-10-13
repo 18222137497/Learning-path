@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 导入约束 -->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="jdbcConfig.properties"></properties>
+    <settings>
+<!--        开启mybatis支持库延迟加载的开关 官方:延迟加载的全局开关，当开启时，所有关联对象都会延迟加载，特定关联关系中可通过尸者fetchType属性来覆盖该项的开关状态-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+<!--        true为全部加载，false为按需加载，官方:开启时，任一方法的调用都会加载该对象的所有延迟加载属性，否则，每个延迟加载属性会按需加载(参考lazyLoadTriggerMethods)-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="com.wang.dao"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,34 @@
+#div1{
+    color: #ff0000;
+}
+#div2{
+    color: #ff0000;
+}
+。cls1{
+    color: #00ffff;
+}
+#div3 #p1{
+    color: #0271ff;
+}
+#div3 #p2{
+    color: darkorchid;
+}
+#div4>#p3,#p4{
+    border: 1px solid;
+}
+input[type="text"]{
+    border: 4px solid;
+}
+a:link{
+    color: #0271ff;
+}
+a:visited{
+    color: red;
+}
+a:active{
+    color: chartreuse;
+}
+a:hover{
+    color: fuchsia;
+
+}

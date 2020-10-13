@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>欢迎使用善良的牙膏的图书管理系统</title>
+    <link href="Utils/css/bootstrap.min.css" rel="stylesheet">
+    <script src="Utils/js/jquery-3.2.1.min.js"></script>
+    <script src="Utils/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-color: gainsboro;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="page-header">
+                    <h1>
+                       图书管理系统 <small>意想不到的体验</small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix" >
+            <div class="col-md-12 column">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a  href="#">登录页面</a>
+                    </li>
+                    <li class="dropdown pull-right">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">下拉<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="http://localhost:63342/web/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/CreateUser.html?_ijt=ulurot73im9d62qlbfq0gt818c">创建用户</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:63342/web/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/download.html?_ijt=ulurot73im9d62qlbfq0gt818c">下载系统</a>
+                            </li>
+                            <li>
+                                <a href="http://localhost:63342/web/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/SystemIntroduce.html?_ijt=ulurot73im9d62qlbfq0gt818c">系统介绍</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="http://localhost:63342/web/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/AboutWriter.html?_ijt=ulurot73im9d62qlbfq0gt818c">关于作者</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-md-2 column">
+                <h2>
+                    用户的登录
+                </h2>
+                <p>
+                    使用已有账户登录以便使用本系统的内容，本系统支持手机用户以及pad用户，合作请联系作者，欢迎您的使用。
+                </p>
+                <p>
+                    <a class="btn" href="http://localhost:63342/web/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/ConnectionWriter.html?_ijt=u6o7mpfh9dv1jderllh51eamh8">如何联系作者?</a>
+                </p>
+            </div>
+            <div class="col-md-8 column">
+                <form role="form" method="get">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">邮箱登录</label><input type="email" name="email" class="form-control" id="exampleInputEmail1" />
+                    </div>
+                    <div class="form-group">
+                        <label id="password_word" for="exampleInputPassword1">密码</label><input type="password" name="password" class="form-control" id="exampleInputPassword1" />
+                        <br><a class="btn" href="http://localhost:63342/web/%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/bookrule.html?_ijt=3f3ahsi556fo4jddj7gcabl034">图书系统使用规范</a>
+                    </div>
+                    <div class="checkbox">
+                        <label><input id='pass_law' name="pass_law" type="checkbox" value="true"/>我同意图书使用规范</label>
+                    </div> <button id='submit_login' type="submit" class="btn btn-default">登录</button>
+                </form>
+            </div>
+            <div class="col-md-2 column">
+                <h2>
+                    《中华人民共和国网络安全法》
+                </h2>
+                <p>
+                    《中华人民共和国网络安全法》是为了保障网络安全，维护网络空间主权和国家安全、社会公共利益，保护公民、法人和其他组织的合法权益，促进经济社会信息化健康发展，制定的法律。
+                    由全国人民代表大会常务委员会于2016年11月7日发布，自2017年6月1日起施行。中华人民共和国主席令（第五十三号）公布。
+                </p>
+                <p>
+                    <a class="btn"  href="https://baike.baidu.com/item/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%B3%95/16843044?fr=aladdin">去了解 »</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <font size="2" color="gray">
+        <center>b站-善良的牙膏<br/>
+            支持正版!
+        </center>
+    </font>
+</body>
+</html>
+<script>
+    var submit_login=document.getElementById('submit_login');
+    var exampleInputPassword1=document.getElementById('exampleInputPassword1');
+    var exampleInputEmail1=document.getElementById("exampleInputEmail1");
+    submit_login.onclick=function () {//如果不同意规范则不会提交内容
+        var pass_law=document.getElementById('pass_law');
+        if (!pass_law.checked){//获取复选框是否被选中
+            alert('请同意图书使用规范');
+            return false;//没选中则拒绝提交且警告
+        }
+        if (exampleInputEmail1.value==''){
+            alert('邮箱不能为空');
+            return false;
+        }
+        if (exampleInputPassword1.value==''){
+            alert('密码不能为空');
+            return false;
+        }
+    }
+
+    exampleInputPassword1.onblur=function () {
+        var d1=document.createElement('d')
+        var password_word=document.getElementById('password_word')
+        if (exampleInputPassword1.value==''){//如果密码框在失去焦点后没有内容
+            d1.style.fontSize= '80%';
+            d1.style.fontWeight='normal';
+            d1.style.color='red';
+            password_word.appendChild(d1);
+            d1.innerHTML='&nbsp;&nbsp;密码不能为空';//报出红色警告
+            setTimeout(function () {//5秒后删除子节点
+                password_word.removeChild(d1);
+            },5000);
+        }
+        exampleInputPassword1.onfocus=function () {//获得焦点，删除子节点
+            password_word.removeChild(d1);
+        }
+    }
+</script>

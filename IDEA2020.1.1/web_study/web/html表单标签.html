@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单标签</title>
+</head>
+<body>
+    <!--
+        form
+            用于定义表单的，可以定义一个范围，范围代表采集用户数据的范围
+            *属性：
+                * action 指定递交数据的URL 提交当前页面
+                * method 指定方式提交
+                    * 分类一共七种，两种常用
+                        * get:
+                            1.请求参数会在地址栏中显示
+                            2.URL(请求参数)的长度是有限制的
+                            3.不太安全
+                        * post：
+                            1.请求参数不会在地址栏中显示，会封装在请求体中
+                            2.请求参数的长度没有限制
+                            3.较为安全
+            *表单项中的数据要想被提交，必须指定其name属性
+
+            -->
+    <form action="#" method="post">
+        <label for="username">用户名:</label><input placeholder="请输入用户名" name="username" id="username"><br>
+        <label>密码:</label><input type="password" name="password" placeholder="密码"><br>
+<!--        input的type属性
+                * text:文本输入框，默认的
+                    * placeholder:指定输入框的提示信息，当输入框的内容发生变化，会自动清空提示消息
+                                  密码框也会显示赋予的值，密码框value不显示值
+                * password:密码框
+                * radio:单选框
+                    * 注意:
+                        1.要想让多个单选框实现单选的效果，则多个单选框的name属性值必须一致
+                        2.一般会给每个单选框赋value值，指定其被选中后提交的值
+                        3.checked属性，默认选中
+                * checkbox:
+                    *注意:
+                        1.一般会给每个单选框赋value值，指定其被选中后提交的值
+                        2.checked属性，默认选中
+                * file:文件选择框
+                * hidden:隐藏域，用于提交一些信息
+                * 按钮:
+                    * submit:提交按钮，可以提交表单
+                    * button:普通按钮
+                    * image:图片提交按钮
+                        * src属性指定图片路径
+            * label:指定输入项的文字描述信息
+                * 注意
+                    * for属性会和input的id属性对应，如果对应，则点击label区域，会让input输入框获取焦点
+
+
+
+
+                        -->
+        <!--单选框-->
+        <table bgcolor="yellow" border="1" cellspacing="0">
+            <caption> 地区选择 </caption>
+            <tr>
+                <td>
+                    <input type="radio" name="地区" value="北京" checked>北京
+                </td>
+                <td>
+                    <input type="radio" name="地区" value="上海">上海
+                </td>
+                <td>
+                    <input type="radio" name="地区" value="天津">天津
+                </td>
+            </tr>
+        </table>
+        <!-- 复选框 -->
+        <table cellspacing="0" bgcolor="#7fffd4" border="1">
+            <caption>爱好</caption>
+            <tr>
+                <td>
+                    <input type="checkbox" name="爱好" value="吃" checked>吃
+                </td>
+                <td>
+                    <input type="checkbox" name="爱好" value="喝">喝
+                </td>
+                <td>
+                    <input type="checkbox" name="爱好" value="乐">乐
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="隐藏" value="123456">
+        <input type="file" name="文件" ><br>
+        <input type="button" name="111" value="222"><br> <!--这个空按钮一点鸟用没有-->
+        <input type="image" src="image/logo.jpg" alt="按钮"><br>
+
+        取色器:<input type="color" name="color"><br>
+        日期:<input type="date" name="日期"><br>
+        日期2:<input type="datetime-local" name="日期2"><br>
+        邮箱:<input type="email" name="邮箱"><br>
+        数字:<input type="number" name="年龄"><br><!--只能输入数字-->
+<!--        * select:下拉列表
+                * 子元素:option，指定列表项
+            * textarea:文本域
+                *cols:指定列数，第一行有多少字符
+                *rows:默认多少行
+                        -->
+        <select name="省份">
+            <option value="">
+                --请选择--
+            </option>
+            <option value="1"><!--如果不设置value则会直接提交option里面的内容(--北京--)-->
+                --北京--
+            </option>
+            <option>
+                --上海--
+            </option>
+            <option selected><!--默认选中ed-->
+                --天津--
+            </option>
+        </select>
+        <!--5行。20个字符-->
+        <textarea cols="20" rows="5" name="自我介绍">
+            默认放入的文字
+        </textarea>
+
+
+        <input type="submit" value="登录">    <!--提交按钮-->
+    </form>
+</body>
+</html>

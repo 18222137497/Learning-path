@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        /*
+        2. 遍历
+            1. js的遍历方式
+                * for(初始化值;循环结束条件;步长)
+            2. jq的遍历方式
+                1. jq对象.each(callback)
+                    1. 语法：
+                        jquery对象.each(function(index,element){});
+                            * index:就是元素在集合中的索引
+                            * element：就是集合中的每一个元素对象
+                            * this：集合中的每一个元素对象
+                    2. 回调函数返回值：
+                        * true:如果当前function返回为false，则结束循环(break)。
+                        * false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)
+            2. $.each(object, [callback])
+            3. for..of: jquery 3.0 版本之后提供的方式
+                for(元素对象 of 容器对象)
+         */
+        $(function () {
+            //js原生方法
+            var city = $("#city li");
+            for (let i = 0; i <city.length; i++) {
+                alert(i+""+city[i].innerHTML);
+            }
+            //第一种方法
+            $("#city li").each(function (index,element) {
+                if ("上海"==$(element).html()){
+                    return true;//相当于continue
+                    //return false;//相当于break
+                }
+                alert($(element).html());
+            })
+            //第二种方法，全局方法
+            $.each($("#city li"),function () {
+                alert(this.innerHTML);
+            })
+            //第三种方法=foreach
+            for (a of $("#city li")){
+                alert(a.innerHTML)
+            }
+
+        })
+
+
+    </script>
+</head>
+<body>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+    <li>天津</li>
+    <li>重庆</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,6 @@
+org\example\domain\AccountUser.class
+org\example\dao\IUserDao.class
+org\example\domain\account.class
+org\example\dao\AccountDao.class
+org\example\domain\IUser.class
+org\example\util\mybatisUtil.class

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        table{
+            margin: auto;
+            width: 500px;
+        }
+        td,th{
+            text-align: center;
+        }
+        #bdiv1{
+            text-align: center;
+        }
+
+
+
+
+        #div4{
+            border: red solid 1px;
+            width: 100px;
+            height: 100px;
+        }
+        #div5{
+            border: red solid 1px;
+            width: 50px;
+            height: 50px;
+        }
+        #div6{
+            border: red solid 1px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+    <div class="cls1">div4</div>
+    <div class="cls1">div5</div>
+    <input type="text" name="username">
+    <a>点我试一试</a>
+    <input type="button" value="给a标签设置属性" id="in1">
+    <input type="button" value="取消a标签的属性" id="in2">
+    <div id="div4">div4<div id="div5">div5</div></div>
+    <a href="javascript:void(0);" id="a1">删除子节点</a>
+    <input type="button" value="删除子节点" id="in3">
+    <input type="button" value="添加子节点" id="in4"><br>
+
+    <span>
+        <div id="bdiv1">
+        <input class="bin" placeholder="请输入编号">
+        <input class="bin" placeholder="请输入姓名">
+        <input class="bin" placeholder="请输入性别">
+        <input type="button" class="bin" value="添加">
+        </div>
+        <table  border="1">
+            <caption>学生信息表</caption>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>任我行</td>
+                <td>男</td>
+                <td><a href="javascript:void(0);" onclick="delTr(this)">删除</a></td><!--删除包括自己-->
+            </tr>
+        </table>
+    </span>
+
+</body>
+</html>
+<script src="JavaScript/jsDOM.js"></script>

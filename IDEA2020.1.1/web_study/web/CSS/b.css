@@ -1,0 +1,28 @@
+/*    属性
+        1. 字体、文本
+         * font-size：字体大小
+         * color：文本颜色
+         * text-align：对其方式
+         * line-height：行高
+        2. 背景
+         * background：
+        3. 边框
+         * border：设置边框，符合属性
+        4. 尺寸
+         * width：宽度
+         * height：高度*/
+   p{
+       color: red;
+       font-size: 30px;/*字体大小*/
+       text-align: center;/*文本对其方式*/
+       line-height: 100px;/*行高*/
+       border: 1px solid red;/*设置边框，符合属性 前面那个属性是边框宽度*/
+
+   }
+    #d1{
+        border: 1px solid red;
+        /*尺寸*/
+        height: 200px;
+        width: 200px;
+        background:url("../img/logo.jpg") no-repeat center;/*背景，可以设置图片 符合属性*/
+    }
