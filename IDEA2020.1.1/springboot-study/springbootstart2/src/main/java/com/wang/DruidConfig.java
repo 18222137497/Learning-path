@@ -33,7 +33,7 @@ public class DruidConfig {
         //允许谁可以访问
         initParameters.put("allow","");//空为谁都可以访问，localhost表示只有本机可以访问
         //禁止谁访问
-        initParameters.put("kuangshen","192.168.1.1");
+        initParameters.put("deny","192.168.1.1");
 
         bean.setInitParameters(initParameters);//设置初始化参数
         return bean;
